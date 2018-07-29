@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import {LoginPageComponent} from './componentes/login-page/login-page.component';
+
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 
 export const Approutes: Routes = [
   {
     path: '',
+    
     component: FullComponent,
     children: [
       { path: '', redirectTo: '/dashboard/classic', pathMatch: 'full' },
@@ -14,6 +17,7 @@ export const Approutes: Routes = [
         path: 'dashboard',
         loadChildren: './dashboards/dashboard.module#DashboardModule'
       },
+  
       {
         path: 'starter',
         loadChildren: './starter/starter.module#StarterModule'
@@ -49,6 +53,7 @@ export const Approutes: Routes = [
       }
     ]
   },
+  {path: 'entrar', component: LoginPageComponent},
   {
     path: '',
     component: BlankComponent,
